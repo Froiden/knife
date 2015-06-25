@@ -1,0 +1,36 @@
+{
+    "name": "froiden/knife",
+    "description": "Laravel package providing additional blade directives.",
+    "homepage": "https://github.com/Froiden/knife",
+    "keywords": [
+        "requirejs",
+        "libraries",
+        "blade",
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shashank Jain",
+            "email": "shashank@froiden.com",
+            "role": "Package Author/Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^5.5.9",
+        "illuminate/support": "~5.0",
+        "ext-curl": "*"
+    },
+    "suggest": {
+    },
+    "require-dev": {
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Froiden\\Knife\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "fontawesome": {
+    "css": [
+      "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+    ],
+    "js": [
+
+    ]
+  },
+  "bootstrap": {
+    "css": [
+      "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"
+    ]
+  }
+}
