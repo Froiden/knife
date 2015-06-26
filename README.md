@@ -7,12 +7,6 @@ Knife is an extension for Laravel's Blade template engine to support some handy 
 
 This is first version of library. More directives will be added soon.
 
-## Requirements
-```JSON
-"PHP": ">=5.4.0"
-"Laravel": ">=5.1"
-"ext-curl": "*"
-```
 ## Installation
 1. First add library using composer:
 
@@ -26,7 +20,7 @@ This is first version of library. More directives will be added soon.
 
 2. Add service provider to `app.php`:
 
-	**For Laravel >5.1:**
+    **For Laravel >5.1:**
     ```php
     Froiden\Knife\KnifeServiceProvider::class
     ```
