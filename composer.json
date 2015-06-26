@@ -19,8 +19,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^5.5.9",
-        "illuminate/support": "~5.0",
+        "php": "^5.4.0",
+        "illuminate/support": "~4.2",
         "ext-curl": "*"
     },
     "suggest": {
