@@ -20,7 +20,7 @@
     "prefer-stable": true,
     "require": {
         "PHP": ">=5.5.9",
-        "illuminate/support": "~5.0",
+        "illuminate/support": "~5.1",
         "ext-curl": "*"
     },
     "suggest": {
