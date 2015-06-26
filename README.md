@@ -10,22 +10,17 @@ This is first version of library. More directives will be added soon.
 ## Requirements
 ```JSON
 "PHP": ">=5.4.0"
+"Laravel": ">=5.1"
 "ext-curl": "*"
 ```
 ## Installation
 1. First add library using composer:
    
-   `composer require froiden/knife`
+   `composer require froiden/knife:~5.1.0`
 2. Add service provider to `app.php`:
 
-   **For Laravel 5:**
-   ```php
+    ```php
     Froiden\Knife\KnifeServiceProvider::class
-    ```
-    
-   **For Laravel 4:**
-   ```php
-    "Froiden\Knife\KnifeServiceProvider"
     ```
 
 ## Some examples
