@@ -4,11 +4,10 @@
  */
 namespace Froiden\Knife;
 
-use App;
 use Blade;
+use Log;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use Log;
 
 /**
  * A laravel service provider to register the class into the the IoC container
@@ -32,65 +31,90 @@ class KnifeServiceProvider extends ServiceProvider
     public function register()
     {
         // Register command
-        $this->app->singleton('command.knife.update', function($app) {
+        $this->app->singleton('command.knife.update', function ($app) {
             return new UpdateLibraries();
         });
         $this->commands('command.knife.update');
 
         // Get contents of index file
-        $indexContents = file_get_contents( __DIR__ ."\index.json");
+        $indexContents = file_get_contents(__DIR__ . "\index.json");
 
         // Parse content json
         $index = json_decode($indexContents);
 
-        Blade::directive('css', function($expression) use ($index) {
 
-            preg_match_all('/"(.*?)"/i', $expression, $libs);
+        Blade::extend(function ($view, $compiler) use($index) {
+            $pattern = $compiler->createMatcher('css');
 
-            // This will contain the output
+            preg_match_all($pattern, $view, $matches);
+
             $output = "";
 
-            foreach($libs[0] as $lib) {
-                // Modify the lib for common aliases
-                $lib = strtolower($lib);
+            foreach($matches[2] as $match) {
+                 preg_match_all('/"(.*?)"/i', $match, $libs);
 
-                $lib = preg_replace("/[\-\. \"]/i", "", $lib);
+                 // This will contain the output
+                $temp = "";
 
-                // Check is right library was included and process accordingly
-                if (isset($index->$lib)) {
-                    foreach ($index->$lib->css as $css) {
-                        $output .= '<link media="all" type="text/css" rel="stylesheet" href="' . $css . '">' . "\n";
-                    }
-                } else {
-                    Log::error("This library was not found: $lib");
-                }
+                 foreach($libs[0] as $lib) {
+                     // Modify the lib for common aliases
+                     $lib = strtolower($lib);
+
+                     $lib = preg_replace("/[\-\. \"]/i", "", $lib);
+
+                     // Check is right library was included and process accordingly
+                     if (isset($index->$lib)) {
+                         foreach ($index->$lib->css as $css) {
+                             $temp .= '<link media="all" type="text/css" rel="stylesheet" href="' . $css . '">' . "\n";
+                         }
+                     } else {
+                         Log::error("This library was not found: $lib");
+                     }
+                 }
+
+                $temp = rtrim($temp, "\n");
+                $view = str_replace("@css".$match, $temp, $view);
+
             }
-            return $output;
+
+            return $view;
         });
 
-        Blade::directive('script', function ($expression) use ($index) {
+        Blade::extend(function ($view, $compiler) use($index) {
+            $pattern = $compiler->createMatcher('script');
 
-            preg_match_all('/"(.*?)"/i', $expression, $libs);
+            preg_match_all($pattern, $view, $matches);
 
-            // This will contain the output
             $output = "";
 
-            foreach ($libs[0] as $lib) {
-                // Modify the lib for common aliases
-                $lib = strtolower($lib);
+            foreach($matches[2] as $match) {
+                 preg_match_all('/"(.*?)"/i', $match, $libs);
 
-                $lib = preg_replace("/[\-\. \"]/i", "", $lib);
+                 // This will contain the output
+                $temp = "";
 
-                // Check is right library was included and process accordingly
-                if (isset($index->$lib)) {
-                    foreach ($index->$lib->js as $js) {
-                        $output .= '<script type="text/javascript" src="' . $js . '">' . '</script>'."\n";
-                    }
-                } else {
-                    Log::error("This library was not found: $lib");
-                }
+                 foreach($libs[0] as $lib) {
+                     // Modify the lib for common aliases
+                     $lib = strtolower($lib);
+
+                     $lib = preg_replace("/[\-\. \"]/i", "", $lib);
+
+                     // Check is right library was included and process accordingly
+                     if (isset($index->$lib)) {
+                         foreach ($index->$lib->js as $js) {
+                             $temp .= '<script type="text/javascript" src="' . $js . '">' . '</script>'."\n";
+                         }
+                     } else {
+                         Log::error("This library was not found: $lib");
+                     }
+                 }
+
+                $temp = rtrim($temp, "\n");
+                $view = str_replace("@script".$match, $temp, $view);
+
             }
-            return $output;
+
+            return $view;
         });
     }
 
