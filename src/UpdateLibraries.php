@@ -14,7 +14,7 @@ class UpdateLibraries extends Command
      */
     protected $name = 'knife:update';
 
-    const UPDATE_PATH = "http://localhost/index.json";
+    const UPDATE_PATH = "http://froiden.cloudapp.net/knife/index.json";
 
     /**
      * The console command description.
