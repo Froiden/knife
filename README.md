@@ -18,11 +18,13 @@ This is first version of library. More directives will be added soon.
    
    `composer require froiden/knife`
 2. Add service provider to `app.php`:
+
    **For Laravel 5:**
    ```php
     Froiden\Knife\KnifeServiceProvider::class
     ```
-   **For Laravel 5:**
+    
+   **For Laravel 4:**
    ```php
     "Froiden\Knife\KnifeServiceProvider"
     ```
