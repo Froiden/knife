@@ -9,14 +9,13 @@ This is first version of library. More directives will be added soon.
 
 ## Requirements
 ```JSON
-"PHP": ">=5.4.0",
-"illuminate/support": ">=5.0"
+"PHP": ">=5.4.0"
 "ext-curl": "*"
 ```
 ## Installation
 1. First add library using composer:
    
-   `composer require froiden/knife:v1.0.*@dev`
+   `composer require froiden/knife`
 2. Add service provider to `app.php`:
 
    **For Laravel 5:**
