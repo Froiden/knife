@@ -3,7 +3,7 @@
 Knife is an extension for Laravel's Blade template engine to support some handy directives that are not included in default blade syntax.
 ## Supported Directives
 - **@css** - Include a Javascript library CSS. For example, if you want to include font-awesome on page, you just write: *@css("font-awesome")*
-- **@script** - Include a Javascript library JS. For example, if you want to load jquery on page, simply write: *@js("jquery")*
+- **@script** - Include a Javascript library JS. For example, if you want to load jquery on page, simply write: *@script("jquery")*
 
 This is first version of library. More directives will be added soon.
 
