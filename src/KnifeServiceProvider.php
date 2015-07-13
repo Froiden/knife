@@ -38,7 +38,7 @@ class KnifeServiceProvider extends ServiceProvider
         $this->commands('command.knife.update');
 
         // Get contents of index file
-        $indexContents = file_get_contents( __DIR__ ."\index.json");
+        $indexContents = file_get_contents( __DIR__ ."/index.json");
 
         // Parse content json
         $index = json_decode($indexContents);

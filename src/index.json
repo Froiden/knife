@@ -14,5 +14,158 @@
     "js": [
       "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"
     ]
+  },
+  "angularjs": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"
+    ]
+  },
+  "angularjscookies": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-cookies.min.js"
+    ]
+  },
+  "angularjsloader": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-loader.min.js"
+    ]
+  },
+  "angularjssanitize": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-sanitize.min.js"
+    ]
+  },
+  "angularjstouch": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-touch.js"
+    ]
+  },
+  "backstretch": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"
+    ]
+  },
+  "bootbox": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"
+    ]
+  },
+  "bootstrapcolorpicker": {
+    "css": [
+      "//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.2.0/css/bootstrap-colorpicker.min.css"
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.2.0/js/bootstrap-colorpicker.min.js"
+    ]
+  },
+  "bootstrapdatepicker": {
+    "css": [
+      "//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker.min.css"
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.2.0/js/bootstrap-colorpicker.min.js"
+    ]
+  },
+  "toastr": {
+    "css": [
+      "//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css"
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.js"
+    ]
+  },
+  "html5shiv": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+    ]
+  },
+  "respond": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"
+    ]
+  },
+  "jquery": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+    ]
+  },
+  "slimscroll": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.6/jquery.slimscroll.min.js"
+    ]
+  },
+  "fastclick": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
+    ]
+  },
+  "blockui": {
+    "css": [
+      
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.66.0-2013.10.09/jquery.blockUI.min.js"
+    ]
+  },
+  "datatables": {
+    "css": [
+      "//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.7/css/jquery.dataTables.min.css"
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.7/js/jquery.dataTables.min.js"
+    ]
+  },
+  "bootstrapdatatables": {
+    "css": [
+      "//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css"
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.7/js/jquery.dataTables.min.js",
+      "//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"
+    ]
+  },
+  "xeditable": {
+    "css": [
+      "//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css"
+    ],
+    "js": [
+      "//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"
+    ]
   }
 }
