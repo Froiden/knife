@@ -1,26 +1,33 @@
 # Knife
 
 Knife is an extension for Laravel's Blade template engine to support some handy directives that are not included in default blade syntax.
-## Feature Overview
+## Supported Directives
 - **@css** - Include a Javascript library CSS. For example, if you want to include font-awesome on page, you just write: *@css("font-awesome")*
-- **@script** - Include a Javascript library JS. For example, if you want to load jquery on page, simply write: *@js("jquery")*
+- **@script** - Include a Javascript library JS. For example, if you want to load jquery on page, simply write: *@script("jquery")*
 
 This is first version of library. More directives will be added soon.
 
-## Requirements
-```JSON
-"PHP": ">=5.4.0"
-"Laravel": ">=5.1"
-"ext-curl": "*"
-```
 ## Installation
 1. First add library using composer:
+
+   **For Laravel >5.1:**
    
    `composer require froiden/knife:~5.1.0`
+
+   **For Laravel 4.2 - 5.0:**
+   
+   `composer require froiden/knife:~4.2`
+
 2. Add service provider to `app.php`:
 
+    **For Laravel >5.1:**
     ```php
     Froiden\Knife\KnifeServiceProvider::class
+    ```
+
+    **For Laravel 4.2 - 5.0:**
+    ```php
+    'Froiden\Knife\KnifeServiceProvider'
     ```
 
 ## Some examples
@@ -33,6 +40,11 @@ Document code
 -->
 @script("bootstrap", "jquery")
 ```
+
+## Update Libraries List
+We are adding new libraries as fast as possible. If you want to update libraries list, instead of running composer update everytime, just run:
+
+`php artisan knife:update`
 
 ## License
 The MIT License (MIT)
