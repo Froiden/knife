@@ -44,9 +44,9 @@ The config file with name **knife.php** will be created in the config folder whe
 ```php
 @use('Carbon\Carbon') // Observe that we have used only Carbon below instead of \Carbon\Carbon
 
-@datetime('now') // 28th August 2015
-@date('now') // 9:37 am
-@time('yesterday') // 27th August 2015, 12:00 am
+@datetime('now') // 28th August 2015, 11:27 am
+@date('now') // 28th August 2015
+@time('2015-08-28 09:37:38') // 09:37 am
 
 @set($count, 1)
 {{ $count++ }} // 1
@@ -55,6 +55,19 @@ The config file with name **knife.php** will be created in the config folder whe
 @set($new)
 {{ $new }}
 {{ Carbon::now() }} // 2015-08-28 09:37:38
+
+$bio = <<<HERE
+Froiden Knife Plugin
+nl2br demo
+HERE;
+
+@nl2br($bio)
+/*
+Froiden Knife Plugin<br/>
+nl2br demo
+*/
+
+@escape("You're writing an unescaped string") \\ You\'re writing an unescaped string
 ```
 ## Suggestions
 
