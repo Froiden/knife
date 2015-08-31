@@ -26,72 +26,27 @@ class KnifeServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        //
+        // Publish our configuration file
+        $this->publishes([
+            __DIR__ . '/config/knife.php' => config_path('knife.php'),
+        ]);
+
+        // Merge the default config file
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/knife.php', 'knife'
+        );
     }
 
     public function register()
     {
-        // Register command
-        $this->app->singleton('command.knife.update', function($app) {
-            return new UpdateLibraries();
-        });
-        $this->commands('command.knife.update');
-
-        // Get contents of index file
-        $indexContents = file_get_contents( __DIR__ ."/index.json");
-
-        // Parse content json
-        $index = json_decode($indexContents);
-
-        Blade::directive('css', function($expression) use ($index) {
-
-            preg_match_all('/"(.*?)"/i', $expression, $libs);
-
-            // This will contain the output
-            $output = "";
-
-            foreach($libs[0] as $lib) {
-                // Modify the lib for common aliases
-                $lib = strtolower($lib);
-
-                $lib = preg_replace("/[\-\. \"]/i", "", $lib);
-
-                // Check is right library was included and process accordingly
-                if (isset($index->$lib)) {
-                    foreach ($index->$lib->css as $css) {
-                        $output .= '<link media="all" type="text/css" rel="stylesheet" href="' . $css . '">' . "\n";
-                    }
-                } else {
-                    Log::error("This library was not found: $lib");
-                }
-            }
-            return $output;
-        });
-
-        Blade::directive('script', function ($expression) use ($index) {
-
-            preg_match_all('/"(.*?)"/i', $expression, $libs);
-
-            // This will contain the output
-            $output = "";
-
-            foreach ($libs[0] as $lib) {
-                // Modify the lib for common aliases
-                $lib = strtolower($lib);
-
-                $lib = preg_replace("/[\-\. \"]/i", "", $lib);
-
-                // Check is right library was included and process accordingly
-                if (isset($index->$lib)) {
-                    foreach ($index->$lib->js as $js) {
-                        $output .= '<script type="text/javascript" src="' . $js . '">' . '</script>'."\n";
-                    }
-                } else {
-                    Log::error("This library was not found: $lib");
-                }
-            }
-            return $output;
-        });
+        RegisterDirectives::datetime();
+        RegisterDirectives::date();
+        RegisterDirectives::time();
+        RegisterDirectives::_use();
+        RegisterDirectives::nl2br();
+        RegisterDirectives::escape();
+        RegisterDirectives::breakpoint();
+        RegisterDirectives::set();
     }
 
     /**
@@ -101,8 +56,6 @@ class KnifeServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [
-            'command.knife.update'
-        ];
+
     }
 }

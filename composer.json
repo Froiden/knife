@@ -3,9 +3,9 @@
     "description": "Laravel package providing additional blade directives.",
     "homepage": "https://github.com/Froiden/knife",
     "keywords": [
-        "requirejs",
         "libraries",
         "blade",
+        "blade extension",
         "laravel"
     ],
     "license": "MIT",
@@ -20,8 +20,7 @@
     "prefer-stable": true,
     "require": {
         "PHP": ">=5.5.9",
-        "illuminate/support": "~5.1",
-        "ext-curl": "*"
+        "illuminate/support": "~5.1"
     },
     "suggest": {
     },
